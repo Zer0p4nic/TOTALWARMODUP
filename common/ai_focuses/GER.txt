@@ -1,0 +1,226 @@
+ai_historical_focus_list_GER = {
+	ai_national_focuses = {
+		# grab as fast as you can if available
+
+		#asap!!
+		GER_sturmgeschutz # +49 days
+		GER_try_to_use_anti_air_as_anti_tank_weapon # +30 days
+		GER_naval_rearmament
+		GER_rhineland # 52 days
+		GER_Wehrmacht
+		GER_Schutzstaffel_focus # 73
+		GER_reform_das_auswaertige_amt # 87
+		GER_replace_the_ambassador_in_japan # 101
+		GER_industrial_cooperation_with_japan # 115
+		GER_Goering_Plan # 157
+		GER_air_innovation # 195
+		GER_messerschmitt # 223
+		GER_autobahn_I	# 258
+		GER_deutsche_arbeitsfront # 300
+		GER_augustplan # 338
+		GER_autarchy # 373
+		GER_reichswerke_hermann_goering # 401
+		GER_reichsarbeitsdienst # 450
+		GER_organisation_todt # 481
+		GER_expand_cooperation_between_military_and_civilian_industry # 533
+		GER_auftragstaktik # 561
+		GER_achtung_panzer # 596
+		GER_Panzer_division # 631
+		GER_anschluss # 764
+		GER_Battlefield_Support 
+		GER_Fast_Bomber
+		GER_expand_opel_werke # 666
+		GER_defence_economy_and_armament_office # 694
+		GER_demand_sudetenland # 834
+		GER_DEA # 859
+		GER_first_vienna_award # 881
+		GER_end_of_czechoslovakia # 946
+		GER_wirtschaftliche_forschungsgesellschaft # 998
+		GER_synthetic_rubber # 1087
+		GER_synthetic_rubber_refinery # 1125
+		GER_demand_memel # 1132 start february 1939
+		GER_mol_rib_pact # 1201
+		GER_danzig_or_war # 1208
+		GER_infanterie_tactics # 1171
+		GER_soviet_treaty # 1240
+		GER_take_over_skoda # 1054
+		GER_coal_liquidization # 1254
+		GER_synthetic_oil_refinery # 1278
+		GER_weserubung # germany isnt declaring 1940 cause of the last change
+		GER_around_maginot
+		GER_artillery_expansion # 1327
+		GER_modernize_support # 1365    
+		GER_improved_staff # 1417
+		GER_sweden_treaty
+		GER_mobilize_the_reich # 1445
+		GER_revenge_versailles # 1480
+		GER_western_knowledge # 1508
+		GER_presure_yugoslavia # 1697
+		GER_second_vienna_award # 1747
+		GER_prepare_to_invade_the_ussr # 2010
+		GER_ussr_war_goal # 2034
+		GER_divebomber_focus # 1578
+		GER_bank_of_german_aviation # 1599
+		GER_air_innovation_2 # 1655
+		GER_oil_weapon_treaty # 1725
+		GER_Heavy_panzer
+		GER_reichsarbeitsdienst_I # 1912
+		GER_take_over_CKD # 1947
+		GER_medium_support_tanks # 1825
+		GER_nibelungenwerk
+		GER_total_war
+		GER_ostwall
+		GER_military_cooperations_with_japan
+		GER_achse_berlin_rom
+		GER_stahlpakt
+		GER_sign_tripartite_pact
+		GER_africa_korps
+		GER_reorganise_the_industry
+		
+	}
+}
+
+ai_focus_defense_GER = {
+	research = {
+		radar_tech = 0.5
+		infantry_tech = 7.5
+		infantry_weapons = 25.0
+		support_tech = 3.25
+		construction_tech = 1.5	 
+		artillery = 1.0
+		motorized_tech = 1.5	
+		cat_mechanized_equipment = 1.5
+		armor = 1.5	
+		land_doctrine = 1.0
+	}
+}
+
+ai_focus_aggressive_GER = {
+	research = {
+		synth_resources = 0.5
+		infantry_weapons = 25.0
+		infantry_tech = 7.5
+		motorized_tech = 2.5
+		cat_mechanized_equipment = 2.5
+		armor = 10.0
+	}
+}
+
+ai_focus_war_production_GER = {
+	research = {
+		industry = 10.0
+		heavy_industry = 2.0
+		construction_tech = 5.0
+		electronics = 14.0 
+		computing_tech = 1.0	
+		infantry_tech = 1.5	
+		motorized_tech = 1.5	
+		cat_mechanized_equipment = 1.5
+		armor = 1.5	
+	}
+}
+
+ai_focus_military_equipment_GER = {
+	research = {
+		infantry_weapons = 25.0
+		infantry_tech = 7.5
+		artillery = 5.0
+		support_tech = 5.25
+		motorized_tech = 1.5
+		armor = 1.5
+	}
+}
+
+ai_focus_military_advancements_GER = {
+	research = {
+		#armor = 100.0
+		cat_light_armor = 25.0 
+		cat_art = 25.0
+		cat_td = 25.0
+        cat_medium_armor = 75.0
+		cat_stug = 60
+		cat_heavy_armor = 22.5	
+		jet_technology = 2.5
+		land_doctrine = 25.0
+		radar_tech = 1.5
+		encryption_tech = 4
+		decryption_tech = 4
+		synth_resources = 1.5
+		infantry_tech = 10.0
+		infantry_weapons = 10.0
+		artillery = 8.5
+		motorized_tech = 20.0
+		cat_mechanized_equipment = 20.0
+		nuclear = 2.5
+		night_vision = 2.5
+		torpedo_equipment = 5.0
+	}
+}
+
+ai_focus_peaceful_GER = {
+	research = {
+		industry = 12.5
+		construction_tech = 4.5
+		electronics = 8.0
+		computing_tech = 5.0
+		infantry_tech = 7.5
+		infantry_weapons = 7.5
+		artillery = 11.0
+		naval_equipment = 5.0
+		ss_tech = 5
+		air_equipment = 3.0
+		torpedo_equipment = 2.5
+		motorized_tech = 2.5
+		cat_mechanized_equipment = 2.5
+		armor = 2.5
+		support_tech = 5.25
+		land_doctrine = 3.5
+	}
+}
+
+ai_focus_naval_GER = {
+    research = {
+        naval_equipment = 38.0
+        naval_doctrine = 50.0
+        marine_tech = 5.0
+        dd_tech = 2.0
+        cl_tech = 9
+        ca_tech = 5
+        bc_tech = 1.5
+        bb_tech = 3.0
+        shbb_tech = 1.0
+        tp_tech = 2.5
+        cv_tech = 1.5
+        ss_tech = 15.0
+		torpedo_equipment = 2.5
+		motorized_tech = 1.5
+		cat_mechanized_equipment = 1.5
+		armor = 1.5
+    }
+}
+
+ai_focus_naval_air_GER = {
+	research = {
+		naval_air = 2.0
+		naval_bomber = 1.5
+		motorized_tech = 1.5
+		armor = 1.5
+	}
+}
+
+ai_focus_aviation_GER = {
+	research = {
+		air_doctrine = 30.0
+		light_air = 5.0
+		light_fighter = 7.5
+		jet_technology = 2.5
+		cas_bomber = 7.0		
+		medium_air = 1.5
+		cat_heavy_fighter = 2.5
+		tactical_bomber = 5.5
+		heavy_air = 1
+		air_equipment = 2.5
+		
+	}
+}
+#EOF#

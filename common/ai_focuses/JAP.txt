@@ -1,0 +1,194 @@
+ai_historical_focus_list_JAP = {
+	ai_national_focuses = {
+		
+		JAP_showa_11
+		JAP_sayonara
+		JAP_steel_focus
+		JAP_guide_the_zaibatsus
+		JAP_challenge_the_zaibatsus
+		JAP_Zaibatsu
+		found_own_faction_focus
+		JAP_the_manchurian_project
+		JAP_build_up_the_manchurian_army
+		JAP_gekokujo
+		JAP_prepare_for_expansion		
+		JAP_war_minister					
+		JAP_Mitsui		
+		JAP_chief_general
+		JAP_inspector_general
+		test_the_ussr_focus
+		JAP_prepare_border
+		JAP_intervene_in_china
+		oust_germans_focus	
+        JAP_kokura		
+		warrior_traditions_focus
+		spiritual_mobilization_focus
+		JAP_kempetai
+		JAP_car		
+		JAP_Mitsubishi
+		JAP_yagi_antenna 	
+        JAP_new_naval_estimates
+        JAP_supremacy_of_the_battlefleet
+		JAP_the_ultimate_battleship
+		JAP_mitsubishi_hv_indu			
+		JAP_mobilitation_law
+		JAP_full_employment	
+		industrial_effort_focus		
+		extra_tech_focus	
+		#student_movement_focus
+		JAP_industrial_research_focus
+		industrial_effort_focus2		
+		JAP_five_ministers_focus
+		JAP_Southern			
+		JAP_industrial_cooperation_with_germany
+		JAP_ask_germany_for_support_with_synthetic_technology
+		JAP_military_cooperations_with_germany
+		JAP_sign_tripartite_pact
+		JAP_pilot_academy		
+		naval_air_innovations_focus_2		
+		JAP_tenno_heika
+		JAP_Research	
+		JAP_waves
+		JAP_radar
+		JAP_Slot_1
+		JAP_focus_hirohito
+		siamese_puppet_focus
+		fortress_japan_focus
+		JAP_full_employment
+		extra_tech_focus	
+		JAP_Ports		
+		naval_base_focus		
+		Air_bases_in_the_Pacific
+		naval_air_innovations_focus		
+		divine_wind_focus
+		JAP_carrier_planes
+		hachimaki
+		JAP_tojo		
+		JAP_cv_planes_add	
+		JAP_Ship_Subtechs	
+		JAP_Navy_Doctrine
+		carrier_focus
+		JAP_computing
+		JAP_anti_air_focus
+	    JAP_strike_on_the_southern_resource_area
+		strike_usa_focus		
+		jap_improved_sprit_focus
+		subvert_india_focus
+		JAP_non_aggression_pact_with_the_soviet_union
+		JAP_Nagasaki_Shipyards
+		JAP_Kawasaki_Docks	
+		JAP_Arty		
+		JAP_secure_china
+		defence_of_korea	
+		JAP_going_nowhere_slow	
+		JAP_cheap_labour		
+		JAP_learn_from_the_gaijin
+		JAP_west
+		JAP_east
+	}
+}
+
+ai_focus_defense_JAP = {
+	research = {
+		radar_tech = 2.0
+		construction_tech = 1.0
+		infantry_tech = 15.0
+		artillery = 25.0
+	}
+}
+
+ai_focus_aggressive_JAP = {
+	research = {
+		synth_resources = 5.0
+		motorized_tech = 2.0
+		armor = 2.0
+		land_doctrine = 5.0
+	}
+}
+
+ai_focus_war_production_JAP = {
+	research = {
+		industry = 20.0
+		construction_tech = 10.0
+		electronics = 20.0
+		computing_tech = 20.0
+	}
+}
+
+ai_focus_military_equipment_JAP = {
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 20.0
+		support_tech = 20.0
+	}
+}
+
+ai_focus_military_advancements_JAP = {
+	research = {
+		#armor = 15.0
+		cat_light_armor = 40.0 
+		cat_art = 40.0
+		cat_td = 40.0
+        cat_medium_armor = 20.0
+		cat_heavy_armor = 1.0
+		jet_technology = 5.0
+		land_doctrine = 110.0
+		rocketry = 7.5
+		radar_tech = 5.0
+		encryption_tech = 9
+		decryption_tech = 9
+		synth_resources = 3.0
+		motorized_tech = 4.0
+		nuclear = 5.0
+		night_vision = 5.0
+	}
+}
+
+ai_focus_peaceful_JAP = {
+	research = {
+		industry = 35.0
+		construction_tech = 17.0
+		electronics = 35.0
+		computing_tech = 10.0
+		land_doctrine = 20.0
+	}
+}
+
+ai_focus_naval_JAP = {
+    research = {
+        naval_equipment = 100.0
+        naval_doctrine = 100.0
+        marine_tech = 10.0
+        dd_tech = 12.0
+        cl_tech = 12.0
+        ca_tech = 12.0
+        bc_tech = 5.0
+        bb_tech = 8.0
+        tp_tech = 12.0
+        cv_tech = 20.0
+        ss_tech = 3.0
+    }
+}
+
+ai_focus_naval_air_JAP = {
+	research = {
+		naval_air = 25.0
+		naval_bomber = 30.0
+	}
+}
+
+ai_focus_aviation_JAP = {
+	research = {
+		air_doctrine = 50.0
+		light_air = 35.0
+		light_fighter = 25.0
+		jet_technology = 25.0
+		cas_bomber = 7.0		
+		medium_air = 5.0
+		tactical_bomber = 25.0
+		heavy_air = 1.5
+		air_equipment = 5.0
+		
+	}
+}

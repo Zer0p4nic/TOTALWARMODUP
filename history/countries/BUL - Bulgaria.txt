@@ -1,0 +1,196 @@
+﻿capital = 48
+
+oob = "BUL_1936"
+
+add_ideas = {
+	limited_conscription
+}
+
+set_technology = {
+################# infantry ###############
+	infantry_uniforms = 1
+	infantry_weapons = 1	
+	tech_Garrison = 1
+	tech_Headquarters = 1
+	################## support ##################
+	tech_recon = 1
+	subtech_recon_cav_1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	semi_motorised_infantry = 1
+	################## artillery ###############
+	gw_artillery = 1
+	################## armor ##############
+	generic_armor = 1
+	tech_Gun_Carriers = 1
+	################## aircraft ##############
+	early_fighter = 1
+	generic_fighter = 1
+	generic_bomber = 1
+	############### economy ############
+	construction0 = 1
+	defence_works0 = 1
+	infra_works0 = 1
+	rail_infra0 = 1
+	road_infra0 = 1
+	basic_industry = 1
+	fuel_silos = 1
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		 has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		ww1_ship_hull_light = 1
+		ww1_ship_hull_cruiser = 1
+		ww1_ship_hull_heavy_cruiser = 1
+		early_battery = 1
+	}
+}
+
+set_convoys = 25
+
+set_politics = {
+	
+	ruling_party = neutrality
+	last_election = "1931.6.21"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+    democratic = 5
+	fascism = 34
+	communism = 5
+	neutrality = 56	
+}
+
+create_country_leader = {
+	name = "Boris III"
+	desc = "POLITICS_BORIS_III_DESC"
+	picture = "Portrait_Bulgaria_Boris_III.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Georgi Dimitrov"
+	desc = "POLITICS_GEORGI_DIMITROV_DESC"
+	picture = "Portrait_Bulgaria_Georgi_Dimitrov.dds"
+	expire = "1965.1.1"
+	ideology = leninism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Zivko Topalovic"
+	desc = "POLITICS_ZIVCO_TOPALOVIC_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Hristo Lukov"
+	desc = "POLITICS_HRISTO_LUKOV_DESC"
+	picture = "GFX_Portrait_bulgaria_hristo_lukov"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_field_marshal = {
+	name = "Nikola Dimitrov Nedeva"
+	picture = "Portrait_Bulgaria_Nikola_Dimitrov_Nedeva.dds"
+	traits = { old_guard cavalry_officer }
+	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Georgi Nikolov Popov"
+	picture = "Portrait_Bulgaria_Georgi_Nikolov_Popov.dds"
+	traits = { defensive_doctrine bearer_of_artillery }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_field_marshal = {
+	name = "Vladimir Dimitrov Stoychev"
+	picture = "Portrait_Bulgaria_Vladimir_Dimitrov_Stoychev.dds"
+	traits = { infantry_officer old_guard }
+	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_Commander = {
+	name = "Vasil Tenev Boydev"
+	picture = "Portrait_Bulgaria_Vasil_Tenev_Boydev.dds"
+	traits = { harsh_leader motorized_officer }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_corps_Commander = {
+	name = "Gancho Ivanov Manchev"
+	picture = "Portrait_Bulgaria_Gancho_Ivanov_Manchev.dds"
+	traits = { infantry_officer trait_cautious }
+	skill = 1
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Konstantin Lukash"
+	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+	traits = { inflexible_strategist cavalry_officer }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_navy_leader = {
+	name = "Ivan Variclechkov"
+	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_3.dds"
+	traits = { blockade_runner }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	maneuvering_skill = 3
+	coordination_skill = 2
+}

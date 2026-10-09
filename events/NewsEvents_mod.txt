@@ -1,0 +1,539 @@
+﻿# News Events
+
+add_namespace = worldnews
+
+
+# Invite the Benelux
+news_event = {
+    id = worldnews.1
+    title = worldnews.1.t
+    desc = worldnews.1.d
+    picture = GFX_news_event_generic_sign_treaty1
+    
+    is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    option = {
+		name = worldnews.1.a
+	}
+}
+
+# Fate of Benelux
+news_event = {
+    id = worldnews.2
+    title = worldnews.2.t
+    desc = worldnews.2.d
+    picture = GFX_news_event_french_parade
+    
+    is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    option = {
+		name = worldnews.2.a
+	}
+}
+
+# Demand Wallonia
+news_event = {
+    id = worldnews.3
+    title = worldnews.3.t
+    desc = worldnews.3.d
+    picture = GFX_news_event_french_parade
+    
+    is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    option = {
+		name = worldnews.3.a
+	}
+}
+
+# Restoration
+news_event = {
+    id = worldnews.4
+    title = worldnews.4.t
+    desc = worldnews.4.d
+    picture = GFX_news_event_royal_visit
+    
+    is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    option = {
+		name = worldnews.4.a
+	}
+}
+
+# Paris Universal Exhibition
+news_event = {
+	id = worldnews.5
+	title = worldnews.5.t
+	desc = worldnews.5.d
+	picture = GFX_Expo
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		date > 1937.5.25
+		date < 1939.1.1
+		is_ai = no
+		country_exists = FRA
+		FRA = { has_war = no }
+	}
+	mean_time_to_happen = {	days = 1 }
+	option = { name = worldnews.5.a }
+}
+
+# Football Worldcup 1938
+news_event = {
+	id = worldnews.6
+	title = worldnews.6.t
+	desc = worldnews.6.d
+	picture = GFX_Foot
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		date > 1938.6.19
+		date < 1939.1.1
+		is_ai = no
+		country_exists = FRA
+		FRA = { has_war = no }
+	}
+	mean_time_to_happen = {	days = 1 }
+	option = { name = worldnews.6.a }
+}
+
+news_event = {
+	id = worldnews.7
+	title = worldnews.7.t
+	desc = worldnews.7.d
+	picture = ENG_beach
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = worldnews.7.a 
+		effect_tooltip = {
+			ENG = {
+				add_timed_idea = {
+					idea = ENG_beach
+					days = 180
+				}
+			}
+		}
+		trigger = {
+			NOT = {
+				tag = ENG
+				tag = GER
+			}
+		}
+	}
+	
+	option = { 
+		name = worldnews.7.b
+		effect_tooltip = {
+			ENG = {
+				add_timed_idea = {
+					idea = ENG_beach
+					days = 180
+				}
+			}
+		}
+		trigger = {
+			tag = GER
+		}
+	}
+	
+	option = { 
+		name = worldnews.7.c
+		effect_tooltip = {
+			ENG = {
+				add_timed_idea = {
+					idea = ENG_beach
+					days = 180
+				}
+			}
+		}
+		trigger = {
+			tag = ENG
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.8
+	title = worldnews.8.t
+	desc = worldnews.8.d
+	picture = GFX_SOV_winter2
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.8.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.8.b
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = { 
+		name = worldnews.8.c
+		trigger = {
+			tag = USA
+			tag = ENG
+		}
+	}
+	option = { 
+		name = worldnews.8.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = USA
+				tag = SOV
+			}
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.9
+	title = worldnews.9.t
+	desc = worldnews.9.d
+	picture = GFX_NOR_quest
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.9.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.9.b
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = { 
+		name = worldnews.9.c
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = { 
+		name = worldnews.9.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = SOV
+			}
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.10
+	title = worldnews.10.t
+	desc = worldnews.10.d
+	picture = GFX_news_GER_margarette
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.10.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.10.b
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = { 
+		name = worldnews.10.c
+		trigger = {
+			tag = ENG
+			tag = USA
+		}
+	}
+	option = { 
+		name = worldnews.10.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = USA
+				tag = SOV
+			}
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.11
+	title = worldnews.11.t
+	desc = worldnews.11.d
+	picture = GFX_news_event_fallrot
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.11.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.11.b
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = { 
+		name = worldnews.11.c
+		trigger = {
+			tag = ENG
+			tag = USA
+		}
+	}
+	option = { 
+		name = worldnews.11.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = USA
+				tag = SOV
+			}
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.12
+	title = worldnews.12.t
+	desc = worldnews.12.d
+	picture = GFX_ENG_operation
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.12.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.12.b
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = { 
+		name = worldnews.12.c
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = { 
+		name = worldnews.12.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = ITA
+			}
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.13
+	title = worldnews.13.t
+	desc = worldnews.13.d
+	picture = GFX_ENG_operation
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.13.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.13.b
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = { 
+		name = worldnews.13.c
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = { 
+		name = worldnews.13.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = ITA
+			}
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.14
+	title = worldnews.14.t
+	desc = worldnews.14.d
+	picture = GFX_ENG_operation
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.14.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.14.b
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = { 
+		name = worldnews.14.c
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = { 
+		name = worldnews.14.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = ITA
+			}
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.15
+	title = worldnews.15.t
+	desc = worldnews.15.d
+	picture = GFX_GER_afrika
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.15.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.15.b
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = { 
+		name = worldnews.15.c
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = { 
+		name = worldnews.15.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = ITA
+			}
+		}
+	}
+}
+
+news_event = {
+	id = worldnews.16
+	title = worldnews.16.t
+	desc = worldnews.16.d
+	picture = GFX_GER_afrika
+	
+	major = yes
+	
+	is_triggered_only = yes
+		
+	option = { 
+		name = worldnews.16.a 
+		trigger = {
+			tag = GER
+		}
+	}
+	option = { 
+		name = worldnews.16.b
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = { 
+		name = worldnews.16.c
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = { 
+		name = worldnews.16.e
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = ENG
+				tag = ITA
+			}
+		}
+	}
+}

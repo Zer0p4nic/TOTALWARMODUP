@@ -1,0 +1,13 @@
+###### no foci for BRA in TW for MtG ?
+#
+#ai_historical_focus_list_BRA = {
+#	
+#	ai_national_focuses = {
+#		politica
+#		repub
+#		direita
+#		estadonovo
+#	}
+#	
+#}
+#EOF#

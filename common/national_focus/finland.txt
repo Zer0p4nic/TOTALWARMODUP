@@ -1,0 +1,1242 @@
+focus_tree = {
+	id = finnish_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			original_tag = FIN
+		}
+	}
+	
+	focus = {
+		id = FIN_agrarianreform
+		icon = GFX_goal_POL_peasant
+		available = {
+			controls_state = 111
+			controls_state = 149
+		}
+		x = 3
+		y = 0
+		cost = 9.2
+		completion_reward = {
+			111 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			149 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_mines2
+		icon = GFX_goal_generic_coal_mining
+		prerequisite = { focus = FIN_agrarianreform }
+		relative_position_id = FIN_agrarianreform
+		available = {
+		}
+		x = 1
+		y = 1
+		cost = 11.8
+		completion_reward = {
+			add_resource = {
+				type = tungsten
+				amount = 14
+				state = 149
+			}
+			add_resource = {
+				type = steel 
+				amount = 12
+				state = 150
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_industrialise
+		icon = GFX_goal_FIN_modernise
+		prerequisite = { focus = FIN_agrarianreform }
+		relative_position_id = FIN_agrarianreform
+		available = {
+			has_bread = yes
+		}
+		x = -3
+		y = 1
+		cost = 5.7
+		completion_reward = {
+			FIN_bread_decrease = yes
+		}
+	}
+	
+	focus = {
+		id = FIN_selfsufficiency
+		icon = GFX_generic_farmer
+		prerequisite = { focus = FIN_agrarianreform }
+		relative_position_id = FIN_agrarianreform
+		available = {
+			controls_state = 150
+		}
+		x = -1
+		y = 1
+		cost = 7.3
+		completion_reward = {
+			150 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes 
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			if = { limit = { has_russia = yes }
+				FIN_russia_decrease = yes
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_farmsecure
+		icon = GFX_farm_security
+		prerequisite = { focus = FIN_agrarianreform }
+		prerequisite = { focus = FIN_selfsufficiency }
+		relative_position_id = FIN_agrarianreform
+		available = {
+			controls_state = 150
+			controls_state = 148
+		}
+		x = 0
+		y = 2
+		cost = 12.2
+		
+		completion_reward = {
+			150 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			148 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			if = { limit = { has_bread = yes }
+				FIN_bread_decrease = yes
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_domestic
+		icon = GFX_goal_FIN_reform
+		prerequisite = { focus = FIN_industrialise focus = FIN_selfsufficiency }
+		relative_position_id = FIN_industrialise
+		available = {
+			controls_state = 145
+		}
+		x = 1
+		y = 1
+		cost = 5.7
+		completion_reward = {
+			145 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			if = { limit = { has_russia = yes }
+				FIN_russia_decrease = yes
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_mannerheimplan
+		icon = GFX_goal_FIN_manner
+		available = {
+			controls_state = 145
+			controls_state = 111
+			has_army_manpower { size > 50000 }
+		}
+		x = 6
+		y = 0
+		cost = 4.8
+		completion_reward = {
+			111 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			145 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_line
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = FIN_mannerheimplan }
+		relative_position_id = FIN_mannerheimplan
+		available = {
+			controls_state = 145
+			controls_state = 111
+		}
+		x = -1
+		y = 2
+		cost = 7.6
+		completion_reward = {
+			custom_effect_tooltip = FIN_line_tt
+			hidden_effect = {
+				FIN = {
+					country_event = {
+						id = finland.100
+						days = 30
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_whiteguards
+		icon = GFX_goal_FIN_white
+		prerequisite = { focus = FIN_mannerheimplan }
+		relative_position_id = FIN_mannerheimplan
+		available = {
+			controls_state = 111
+		}
+		x = 1
+		y = 2
+		cost = 6.2
+		completion_reward = {
+			111 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = FIN_white_guard_idea
+		}
+	}
+	
+	focus = {
+		id = FIN_winterwar
+		icon = GFX_goal_FIN_winterwar
+		prerequisite = { focus = FIN_whiteguards focus = FIN_line focus = FIN_health focus = FIN_liberallaw }
+		relative_position_id = FIN_line
+		available = {
+			has_global_flag = winterwar
+		}
+		x = 2
+		y = 1
+		cost = 1
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+	focus = {
+		id = FIN_decentralise
+		icon = GFX_war_bonds_111
+		prerequisite = { focus = FIN_farmsecure }
+		relative_position_id = FIN_farmsecure
+		bypass = {
+			and = {
+				not = { has_country_flag = FIN_election1936 }
+				date > 1937.01.01
+			}
+		}
+		available = {
+			has_country_flag = FIN_election1936
+		}
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			add_political_power = 150
+			if = { limit = { has_bread = yes }
+				FIN_bread_decrease = yes
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_tariff
+		icon = GFX_goal_FIN_tarifprot
+		prerequisite = { focus = FIN_domestic }
+		relative_position_id = FIN_industrialise
+		available = {
+		}
+		x = 1
+		y = 2
+		cost = 6.8
+		completion_reward = {
+			add_ideas = FIN_tarifs
+			if = { limit = { has_idea = FIN_russia2 }
+				FIN_russia_increase = yes
+			}
+			else_if = { limit = { has_idea = FIN_russia3 }
+				FIN_russia_increase = yes
+			}
+			else = {
+				add_political_power = -100
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_2yearplan
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = FIN_winterwar }
+		relative_position_id = FIN_winterwar
+		available = {
+			controls_state = 111
+		}
+		x = -1
+		y = 1
+		cost = 8.9
+		completion_reward = {
+			111 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_timed_idea = {
+				idea = FIN_2year
+				days = 725
+			}
+			FIN_loan_increase = yes
+		}
+	}
+	
+	focus = {
+		id = FIN_nickel
+		icon = GFX_Goal_FIN_mines
+		prerequisite = { focus = FIN_2yearplan }
+		relative_position_id = FIN_2yearplan
+		available = {
+			controls_state = 722
+		}
+		x = 0
+		y = 2
+		cost = 4
+		completion_reward = {
+			add_resource = {
+				type = chromium
+				amount = 10
+				state = 722
+			}
+			custom_effect_tooltip = FIN_petsamo_crisis
+			country_event = {
+				id = finland.13
+				days = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_wood
+		icon = GFX_goal_FIN_wood2
+		prerequisite = { focus = FIN_tariff }
+		relative_position_id = FIN_selfsufficiency
+		available = {
+			controls_state = 149
+			if = { limit = { is_ai = no }
+				has_tech = heavy_industry
+			}
+		}
+		x = 0
+		y = 3
+		cost = 6.75
+		completion_reward = {
+			149 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = steel_refinery
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 5
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_supportrural
+		icon = GFX_goal_FIN_rural
+		prerequisite = { focus = FIN_2yearplan }
+		prerequisite = { focus = FIN_rapid }
+		relative_position_id = FIN_2yearplan
+		available = {
+			has_country_flag = FIN_election1936
+		}
+		x = -1
+		y = 1
+		cost = 4.9
+		completion_reward = {
+			if = { limit = { has_bread = yes }
+				FIN_bread_decrease = yes
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_line2
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = FIN_2yearplan focus = FIN_preparerevenge }
+		relative_position_id = FIN_winterwar
+		available = {
+			controls_state = 150
+			controls_state = 111
+		}
+		x = 0
+		y = 2
+		cost = 3.7
+		completion_reward = {
+			150 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 7
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 3030
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 139
+					instant_build = yes
+				}
+			}
+			111 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 52
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 6082
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 6186
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_politic
+		icon = GFX_Goal_befriend_finland
+		available = {
+		}
+		x = 10
+		y = 0
+		cost = 3
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.02
+		}
+	}
+	
+	focus = {
+		id = FIN_germantreaty
+		icon = GFX_goal_FIN_gertreaty
+		prerequisite = { focus = FIN_politic }
+		relative_position_id = FIN_politic
+		bypass = {
+			has_war_with = GER
+		}
+		available = {
+		}
+		x = 2
+		y = 1
+		cost = 2.1
+		completion_reward = {
+			add_political_power = 30
+			GER = {
+				country_event = {
+					id = finland.106
+					days = 1
+				}
+				custom_effect_tooltip = needs_approval
+			}
+			effect_tooltip = {
+				GER = {
+					add_political_power = 100
+				}
+				FIN = {
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 1
+						category = armor
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_redsoil
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = FIN_politic }
+		relative_position_id = FIN_politic
+		bypass = {
+		}
+		available = {
+			has_idea = FIN_vaino_tanner
+		}
+		x = 0
+		y = 1
+		cost = 3.7
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.09
+			}
+			add_stability = 0.03
+			add_political_power = 40
+		}
+	}
+	
+	focus = {
+		id = FIN_health
+		icon = GFX_goal_FIN_redcross
+		prerequisite = { focus = FIN_redsoil }
+		relative_position_id = FIN_redsoil
+		bypass = {
+		}
+		available = {
+		}
+		x = 1
+		y = 1
+		cost = 5.2
+		completion_reward = {
+			custom_effect_tooltip = FIN_hospital
+			hidden_effect = {
+				set_technology = {
+					tech_field_hospital = 1
+					tech_field_hospital2 = 1
+				}
+			}
+			add_political_power = 50
+		}
+	}
+	
+	focus = {
+		id = FIN_liberallaw
+		icon = GFX_goal_government_icon
+		prerequisite = { focus = FIN_redsoil }
+		relative_position_id = FIN_redsoil
+		bypass = {
+		}
+		available = {
+		}
+		x = -1
+		y = 1
+		cost = 8.9
+		completion_reward = {
+			add_war_support = 0.05
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = FIN_prohibition
+		icon = GFX_goal_FIN_alcohol
+		prerequisite = { focus = FIN_liberallaw }
+		relative_position_id = FIN_liberallaw
+		bypass = {
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		cost = 7.2
+		completion_reward = {
+			add_stability = 0.07
+			add_political_power = 130
+		}
+	}
+	
+	focus = {
+		id = FIN_privatization
+		icon = GFX_goal_FIN_heavyindust
+		prerequisite = { focus = FIN_tariff }
+		relative_position_id = FIN_tariff
+		bypass = {
+		}
+		available = {
+			if = { limit = { is_ai = no }
+				has_tech = heavy_industry
+			}
+		}
+		x = -1
+		y = 1
+		cost = 10.3
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 111 }
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+			}
+			random_owned_controlled_state = {
+				prioritize = { 145 }
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_newfarms
+		icon = GFX_goal_FIN_farm
+		prerequisite = { focus = FIN_wood }
+		prerequisite = { focus = FIN_privatization }
+		relative_position_id = FIN_wood
+		bypass = {
+		}
+		available = {
+		}
+		x = -1
+		y = 1
+		cost = 7.9
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_rapid
+		icon = GFX_Goal_FIN_refuge
+		prerequisite = { focus = FIN_winterwar }
+		relative_position_id = FIN_winterwar
+		bypass = {
+		}
+		available = {
+			has_completed_focus = FIN_decentralise
+			has_idea = FIN_refuge
+		}
+		x = -3
+		y = 1
+		cost = 6
+		completion_reward = {
+			remove_ideas = FIN_refuge
+		}
+	}
+	
+	focus = {
+		id = FIN_blockexports
+		icon = GFX_SOV_colect
+		prerequisite = { focus = FIN_winterwar }
+		relative_position_id = FIN_winterwar
+		bypass = {
+		}
+		available = {
+		}
+		x = 1
+		y = 1
+		cost = 5.8
+		completion_reward = {
+			FIN_russia_remove = yes
+			add_ideas = closed_economy
+		}
+	}
+	
+	focus = {
+		id = FIN_statecontrol
+		icon = GFX_goal_wheat
+		prerequisite = { focus = FIN_decentralise }
+		relative_position_id = FIN_decentralise
+		bypass = {
+		}
+		available = {
+			NOT = { has_global_flag = winterwar }
+			has_completed_focus = FIN_selfsufficiency
+			has_completed_focus = FIN_domestic
+		}
+		x = 0
+		y = 2
+		cost = 3.7
+		completion_reward = {
+			custom_effect_tooltip = FIN_state
+		}
+	}
+	
+	focus = {
+		id = FIN_preparerevenge
+		icon = GFX_Goal_Op_barbarossa
+		prerequisite = { focus = FIN_winterwar }
+		prerequisite = { focus = FIN_liberallaw focus = FIN_health }
+		relative_position_id = FIN_winterwar
+		bypass = {
+		}
+		available = {
+			has_army_manpower { size > 150000 }
+		}
+		x = 3
+		y = 1
+		cost = 5
+		completion_reward = {
+			unlock_decision_tooltip = FIN_forces
+			unlock_decision_tooltip = FIN_continuationwar
+			if = {
+				limit = { is_ai = no }
+				FIN = {
+					add_timed_idea = {
+						idea = FIN_perkele4
+						days = 60
+					}
+				}
+			}
+			else = {
+				FIN = {
+					add_timed_idea = {
+						idea = FIN_perkele4
+						days = 90
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { is_ai = yes }
+					add_ai_strategy = { 
+						type = conquer
+						id = SOV			
+						value = 200
+					}
+					add_ai_strategy = { 
+						type = antagonize
+						id = SOV			
+						value = 200
+					}
+					add_ai_strategy = { 
+						type = dont_defend_ally_borders
+						id = GER			
+						value = 200
+					}
+					add_timed_idea = {
+						idea = FIN_AIdiv
+						days = 365
+					}
+					add_ai_strategy = {
+						type = force_build_armies
+						value = 100
+					}
+				}
+			}
+			FIN_loan_increase = yes
+			
+			
+		}
+	}
+	
+	focus = {
+		id = FIN_program
+		icon = GFX_arms_artillery_grenades
+		prerequisite = { focus = FIN_preparerevenge }
+		relative_position_id = FIN_preparerevenge
+		available = {
+			NOT = { has_war_with = SOV }
+			NOT = { has_war_with = GER }
+		}
+		x = 3
+		y = 1
+		cost = 6
+		completion_reward = {
+			add_ideas = FIN_program1940
+			FIN_loan_increase = yes
+		}
+	}
+	
+	focus = {
+		id = FIN_airdev
+		icon = GFX_goal_luftwaffe
+		prerequisite = { focus = FIN_program }
+		relative_position_id = FIN_program
+		available = {
+		}
+		x = -1
+		y = 1
+		cost = 8.5
+		completion_reward = {
+			add_tech_bonus = {
+				category = light_fighter
+				uses = 2
+				bonus = 0.5
+			}
+			air_experience = 15
+		}
+	}
+	
+	focus = {
+		id = FIN_landdev
+		icon = GFX_goal_FIN_simo
+		prerequisite = { focus = FIN_program }
+		relative_position_id = FIN_program
+		available = {
+		}
+		x = 1
+		y = 1
+		cost = 9.6
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = HQ_equipment_0
+				amount = 200
+				producer = GER
+			}
+			add_tech_bonus = {
+				category = infantry_weapons
+				uses = 1
+				bonus = 0.3
+			}
+			add_tech_bonus = {
+				category = land_doctrine
+				uses = 1
+				bonus = 0.5
+			}
+			FIN_loan_increase = yes
+		}
+	}
+	
+	focus = {
+		id = FIN_salestax
+		icon = GFX_goal_generic_news
+		prerequisite = { focus = FIN_landdev }
+		prerequisite = { focus = FIN_airdev }
+		relative_position_id = FIN_landdev
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maxloan_fin		
+				has_idea = FIN_loans5
+			}
+		}
+		x = -1
+		y = 1
+		cost = 4
+		completion_reward = {
+			unlock_decision_tooltip = FIN_sales1
+		}
+	}
+	
+	focus = {
+		id = FIN_propaganda
+		icon = GFX_Goal_FIN_finland
+		prerequisite = { focus = FIN_preparerevenge }
+		relative_position_id = FIN_preparerevenge
+		bypass = {
+		}
+		available = {
+			has_global_flag = winterwar
+			has_army_manpower { size > 200000 }
+		}
+		x = -1
+		y = 1
+		cost = 7.8
+		completion_reward = {
+			add_timed_idea = {
+				idea = FIN_simo
+				days = 250
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_axis
+		icon = GFX_Goal_FIN_factory
+		prerequisite = { focus = FIN_preparerevenge }
+		relative_position_id = FIN_preparerevenge
+		bypass = {
+			GER = { exists = no }
+			has_global_flag = FIN_germantreaty_no
+		}
+		available = {
+			has_completed_focus = FIN_germantreaty
+		}
+		x = 1
+		y = 1
+		cost = 6.3
+		completion_reward = {
+			GER = {
+				country_event = {
+					id = finland.333
+					days = 1
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_improvestaff
+		icon = GFX_goal_FIN_jaak
+		prerequisite = { focus = FIN_axis }
+		prerequisite = { focus = FIN_propaganda }
+		relative_position_id = FIN_axis
+		bypass = {
+		}
+		available = {
+			or = {
+				is_in_faction_with = GER
+				is_puppet_of = GER
+				GER = { exists = no }
+			}
+		}
+		x = -1
+		y = 1
+		cost = 9
+		completion_reward = {
+			swap_ideas = {
+				add_idea = sisu2
+				remove_idea = sisu
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_conscription
+		icon = GFX_war_factory_green
+		prerequisite = { focus = FIN_mannerheimplan }
+		relative_position_id = FIN_mannerheimplan
+		bypass = {
+		}
+		available = {
+		}
+		x = 2
+		y = 1
+		cost = 8.4
+		completion_reward = {
+			add_ideas = FIN_jaakarit
+			army_experience = 20
+		}
+	}
+	
+	focus = {
+		id = FIN_suomi
+		icon = GFX_Goal_FIN_def
+		prerequisite = { focus = FIN_mannerheimplan }
+		relative_position_id = FIN_mannerheimplan
+		available = {
+		}
+		x = 0
+		y = 1
+		cost = 7.4
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = infantry_weapons
+			}
+			add_ideas = FIN_suomi2
+		}
+	}
+	
+	focus = {
+		id = FIN_motti
+		icon = GFX_goal_molotov
+		prerequisite = { focus = FIN_line focus = FIN_whiteguards }
+		relative_position_id = FIN_line
+		available = {
+		}
+		x = 0
+		y = 1
+		cost = 7.4
+		completion_reward = {
+			add_ideas = FIN_cocktail
+			add_tech_bonus = {
+				name = motti_tactics
+				bonus = 1
+				uses = 1
+				category = cat_guerilla_warfare
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_baltic
+		icon = GFX_Goal_FIN_invest
+		bypass = {
+			and = {
+				EST = { exists = no }
+				LAT = { exists = no }
+				LIT = { exists = no }
+			}
+		}
+		available = {
+		}
+		x = 15
+		y = 0
+		cost = 6.2
+		completion_reward = {
+			custom_effect_tooltip = FIN_baltic_tt
+			hidden_effect = {
+				set_global_flag = FIN_investbaltic
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_sweden
+		icon = GFX_Goal_Befriend_Sweden
+		prerequisite = { focus = FIN_baltic }
+		mutually_exclusive = { focus = FIN_aland }
+		relative_position_id = FIN_baltic
+		bypass = {
+			SWE = { exists = no }
+		}
+		available = {
+			SWE = { exists = yes }
+		}
+		x = -1
+		y = 1
+		cost = 8.1
+		completion_reward = {
+			FIN_language_decrease = yes
+		}
+	}
+	
+	focus = {
+		id = FIN_integrate
+		icon = GFX_goal_FIN_integrate
+		prerequisite = { focus = FIN_sweden }
+		prerequisite = { focus = FIN_germantreaty }
+		relative_position_id = FIN_sweden
+		bypass = {
+		}
+		available = {
+		}
+		x = -1
+		y = 1
+		cost = 7.1
+		completion_reward = {
+			FIN_language_decrease = yes
+			if = { limit = { 145 = { is_demilitarized_zone = yes } }
+				145 = { set_demilitarized_zone = yes }
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_aland
+		icon = GFX_goal_FIN_disunity
+		prerequisite = { focus = FIN_baltic }
+		mutually_exclusive = { focus = FIN_sweden }
+		relative_position_id = FIN_baltic
+		bypass = {
+			SWE = { exists = no }
+		}
+		available = {
+			SWE = { exists = yes }
+		}
+		x = 1
+		y = 1
+		cost = 6.7
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 20
+				is_historical_focus_on = no
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				limit = { 145 = { is_demilitarized_zone = yes } }
+				145 = { set_demilitarized_zone = no }
+			}
+			145 = {
+				add_building_construction = {
+					instant_build = yes
+					level = 3
+					type = coastal_bunker
+					province = 9228
+				}
+			}
+			add_threat = 1
+		}
+	}
+	
+	focus = {
+		id = FIN_strikesweden
+		icon = GFX_attack_SWE
+		prerequisite = { focus = FIN_aland }
+		relative_position_id = FIN_aland
+		bypass = {
+			SWE = { exists = no }
+			has_war_with = SWE
+		}
+		available = {
+			SWE = { exists = yes }
+			NOT = { is_in_faction_with = SWE }
+			NOT = { SWE = { is_puppet_of = FIN } }
+		}
+		x = -1
+		y = 1
+		cost = 2.3
+		
+		will_lead_to_war_with = SWE
+		
+		completion_reward = {
+			unlock_decision_tooltip = FIN_swedenwar
+			add_threat = 2
+		}
+	}
+	
+	focus = {
+		id = FIN_populatenorth
+		icon = GFX_goal_FIN_populate
+		prerequisite = { focus = FIN_strikesweden focus = FIN_integrate }
+		relative_position_id = FIN_strikesweden
+		bypass = {
+		}
+		available = {
+			controls_state = 666
+		}
+		x = -1
+		y = 1
+		cost = 9
+		
+		completion_reward = {
+			666 = {
+				add_core_of = FIN
+			}
+		}
+	}
+	focus = {
+		id = FIN_removeswedish
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = FIN_aland }
+		relative_position_id = FIN_aland
+		bypass = {
+		}
+		available = {
+		}
+		x = 1
+		y = 1
+		cost = 8.7
+		
+		completion_reward = {
+			remove_ideas = FIN_language
+		}
+	}
+	
+	default = no
+	
+	###
+   
+   
+	}
+	
+
+    
+
+    

@@ -1,0 +1,306 @@
+POL_agriculture = {
+
+	POL_agrarian1 = {
+	    allowed = {
+			always = yes
+			#added through on_action
+		}
+			
+		visible = {
+			original_tag = POL
+			has_completed_focus = POL_suburban
+			OR = {
+				has_idea = POL_agrarian
+				has_idea = POL_agrarian2
+				has_idea = POL_agrarian3
+			}
+		}
+
+		available = {
+			original_tag = POL
+			has_completed_focus = POL_suburban
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+		
+		cost = 50
+		
+		days_remove = 30
+
+		complete_effect = {
+			if = { limit = { has_idea = POL_agrarian }
+				swap_ideas = {
+					remove_idea = POL_agrarian
+					add_idea = POL_agrarian2
+				}
+			}
+			else_if = { limit = { has_idea = POL_agrarian2 } 
+				swap_ideas = {
+					remove_idea = POL_agrarian2
+					add_idea = POL_agrarian3
+				}
+			}
+			else = {
+				remove_ideas = POL_agrarian3
+			}
+		}
+	}
+}
+
+POL_plans_for_war = {
+
+	POL_army = {
+	    allowed = {
+			always = yes
+			#added through on_action
+		}
+			
+		visible = {
+			original_tag = POL
+			has_completed_focus = POL_army_reform
+		}
+
+		available = {
+			original_tag = POL
+			has_completed_focus = POL_army_reform
+			has_army_experience > 15
+			hidden_trigger = {
+				or = {
+					has_idea = POL_officers
+					has_idea = POL_officers2
+					has_idea = POL_officers3
+					has_idea = POL_officers4
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+		
+		days_remove = 80
+
+		complete_effect = {
+			if = {
+				limit = { has_idea = POL_officers }
+				swap_ideas = {
+					remove_idea = POL_officers
+					add_idea = POL_officers2
+				}
+			}
+			else_if = {
+				limit = { has_idea = POL_officers2 }
+				swap_ideas = {
+					remove_idea = POL_officers2
+					add_idea = POL_officers3
+				}
+			}
+			else_if = {
+				limit = { has_idea = POL_officers3 }
+				swap_ideas = {
+					remove_idea =  POL_officers3
+					add_idea =  POL_officers4
+				}
+			}
+			else_if = { 
+				limit = { has_idea = POL_officers4 }
+				remove_ideas = POL_officers4
+			}
+			army_experience = -15
+		}
+	}
+
+	POL_ww2plan = {
+	    allowed = {
+			always = yes
+			#added through on_action
+		}
+			
+		visible = {
+			original_tag = POL
+			has_completed_focus = POL_plan_west
+		}
+
+		available = {
+			original_tag = POL
+			has_defensive_war_with = GER
+			has_completed_focus = POL_plan_west
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+		
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		complete_effect = {
+			#cleanup, no more ai/player separated modifiers
+			POL = {
+				add_timed_idea = {
+					idea = POL_determination
+					days = 185
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						AND = {
+							has_country_flag = POL_protected2 
+							NOT = { has_country_flag = POL_esupp1 }
+						}
+					}
+					add_timed_idea = {
+						idea = POL_betreyal
+						days = 45
+					}
+				}
+			}
+		}
+	}
+	
+	POL_ww2plan2 = {
+		allowed = {
+			always = yes
+			#added through on_action
+		}
+			
+		visible = {
+			original_tag = POL
+			has_completed_focus = POL_plan_east
+		}
+
+		available = {
+			original_tag = POL
+			has_war_with = SOV
+			NOT = { has_war_with = GER }
+			has_completed_focus = POL_plan_east
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+		
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = POL_soviet
+				days = 180
+			}
+		}
+	}
+	
+	POL_enemysupp2 = {
+		allowed = {
+			always = yes
+			#added through on_action
+		}
+			
+		visible = {
+			original_tag = POL
+			has_war_with = GER
+		}
+
+		available = {
+			original_tag = POL
+			has_war_with = GER
+			has_country_flag = POL_esupp1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+		
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = POL_esupport
+				days = 90
+			}
+		}
+	}
+	
+	POL_lithuania2 = {
+	    allowed = {
+			always = yes
+			#added through on_action
+		}
+			
+		visible = {
+			original_tag = POL
+		}
+
+		available = {
+			original_tag = POL
+			has_completed_focus = POL_ultimatum
+			has_country_flag = POL_refuse
+			date > 1937.1.1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+		
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = LIT
+				type = annex_everything
+			}
+		}
+	}
+	
+	POL_armiakrajowa = {
+		allowed = {
+			always = yes
+		}
+		
+		visible = {
+			original_tag = POL
+			POL = { has_capitulated = yes }
+		}
+		
+		available = {
+			original_tag = POL
+			POL = { has_capitulated = yes }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			POL = {
+				add_ideas = { POL_armiakraj }
+			}
+			hidden_effect = {
+				set_country_flag = armiakrajowa
+			}
+		}
+		
+	}
+	
+	
+}

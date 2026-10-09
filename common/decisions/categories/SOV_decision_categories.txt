@@ -1,0 +1,52 @@
+################
+#### SOVIET ####
+################
+
+SOV_industry_relocation = {
+	
+	allowed = {
+		original_tag = SOV
+	}
+
+	available = {
+		has_war_with = GER
+	}
+
+	visible = {
+		has_war = yes
+	}
+}
+
+SOV_great_patriotic_war = {
+	allowed = {
+		original_tag = SOV
+	}
+	visible = {
+		has_war = yes
+	}
+		
+}
+SOV_global_revolution = {
+	allowed = {
+		original_tag = SOV
+	}
+	visible = {
+		has_government = communism
+	}
+	icon = generic_political_actions
+	
+}
+SOV_tanks_corps = {
+	allowed = {
+		original_tag = SOV
+	}
+	visible = {
+		has_government = communism
+		has_war = yes
+	}
+	available = {
+		has_completed_focus = SOV_guards
+	}
+	icon = generic_political_actions
+	
+}

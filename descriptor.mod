@@ -1,0 +1,16 @@
+name="Total War Legacy"
+tags={
+	"Balance"
+	"Events"
+	"Gameplay"
+	"Graphics"
+	"Historical"
+	"Map"
+	"Military"
+	"National Focuses"
+	"Technologies"
+}
+picture="FrontTotalWar.jpg"
+version="1"
+supported_version="1.8.2"
+remote_file_id="1558530845"
